@@ -1,0 +1,50 @@
+name: Bug report
+description: Something isn't working as expected
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Please don't include API keys, tokens, or
+        other secrets in this report.
+  - type: dropdown
+    id: project
+    attributes:
+      label: Which project?
+      options:
+        - OrbitKit CLI
+        - OrbitKit Deploy (GitHub Action)
+        - OrbitKit hosted service / dashboard
+        - Other / not sure
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Run `orbitkit ...`
+        2. ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: "CLI: output of `orbitkit --version`. Action: the `@vX` you pinned."
+    validations:
+      required: false
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      description: OS, Node.js version, CI provider (if relevant)
+    validations:
+      required: false
