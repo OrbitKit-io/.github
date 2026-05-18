@@ -1,8 +1,10 @@
 <p align="center">
   <a href="https://orbitkit.io">
-    <img src="https://orbitkit.io/assets/brand/orbitkit-wordmark-600.png" alt="OrbitKit" width="320">
+    <img src="https://orbitkit.io/assets/brand/orbitkit-icon-512.png" alt="OrbitKit" width="96">
   </a>
 </p>
+
+<h1 align="center">OrbitKit</h1>
 
 <p align="center"><strong>The web layer for Apple platform apps.</strong></p>
 
@@ -30,7 +32,18 @@ Apple's App Store Review requires a surprising number of **web URLs** before you
 | [**OrbitKit CLI**](https://github.com/OrbitKit-io/OrbitKit-CLI) | Manage apps, policies & deploys from the terminal or CI | `npm i -g @orbitkit-io/cli` |
 | [**OrbitKit Deploy**](https://github.com/OrbitKit-io/OrbitKit-Deploy) | GitHub Action to deploy your app site from CI/CD | `uses: OrbitKit-io/OrbitKit-Deploy@v1` |
 
-Both are [Apache‑2.0](https://www.apache.org/licenses/LICENSE-2.0) licensed. OrbitKit also runs a **hosted MCP server** so AI agents can manage your App Store compliance pages directly.
+Both are [Apache‑2.0](https://www.apache.org/licenses/LICENSE-2.0) licensed.
+
+## AI agents (MCP)
+
+OrbitKit runs a **hosted MCP server** so Claude, Cursor, and other [Model Context Protocol](https://modelcontextprotocol.io) clients can manage your App Store compliance pages directly. Add it in one line:
+
+```bash
+claude mcp add --transport http orbitkit https://mcp.orbitkit.io/mcp \
+  --header "Authorization: Bearer ok_YOUR_API_KEY"
+```
+
+Or point any MCP client at `https://mcp.orbitkit.io/mcp` with an `Authorization: Bearer ok_…` header. Full setup & tool reference: **[orbitkit.io/api/mcp-server](https://orbitkit.io/api/mcp-server/)**.
 
 ## Get started
 
